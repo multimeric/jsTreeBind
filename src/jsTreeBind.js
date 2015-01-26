@@ -4,20 +4,25 @@
 (function ($) {
     function treeNode(domNode) {
 
+        var tNode = this;
+
         //Default values
-        this.children = true;
-        this.state = {'opened': false, 'selected': false};
+        tNode.children = true;
+        tNode.state = {'opened': false, 'selected': false};
+        tNode.node = domNode;
 
         //Add all data attributes
-        for (key in domNode.attributes) {
+        $.each(domNode.attributes, function (i, attr) {
+            var key = attr.nodeName;
+
             var sub = key.substr(0, 5);
             if (sub === "data-")
-                this[sub] = domNode.attributes[key];
-        }
+                tNode[key.substr(5)] = attr.value;
+        });
 
         //Make sure it has text
         if ("text" in this === false)
-            this.text = domNode.textContent;
+            tNode.text = domNode.textContent;
 
     }
 
@@ -29,7 +34,7 @@
         options = options || {};
 
         //Perform error checking
-        if (typeof $.jstree != "function")
+        if (typeof $.fn.jstree != "function")
             throw new Error("jsTree must be installed for jsTree-bind to work!");
         if (bind[0] instanceof Element === false)
             throw new Error("You need to pass in a valid jQuery selector or DOM element as the first element of jstreeBind()");
@@ -47,8 +52,11 @@
                     else
                         nodes = $(obj.original.node);
 
+                    //Turn into array of children
+                    nodes = $.makeArray(nodes.children());
+
                     //Construct a treeNode out of each element and return it
-                    callback(nodes.children().map(function (el) {
+                    callback($.map(nodes, function (el) {
                         return new treeNode(el);
                     }));
                 }

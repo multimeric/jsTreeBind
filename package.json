@@ -10,7 +10,7 @@
     "url": "https://github.com/TMiguelT/jsTree-bind.git"
   },
   "scripts": {
-    "build": "mkdir dist && uglifyjs src/jsTreeBind.js -m -c -o dist/jsTreeBind.min.js",
+    "build": "uglifyjs src/jsTreeBind.js -m -c -o dist/jsTreeBind.min.js",
     "clean": "rimraf dist"
   }
 }
