@@ -1,18 +1,11 @@
-# jsTree-bind
-A jQuery plugin that allows the use of data binding frameworks (Angular, Ember, Knockout etc.) with the jsTree UI component.
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Vue Tree Example</title>
+</head>
+<body>
 
-##Rationale
-
-jsTree is a fantastic plugin, but it's a bit behind the times. Unlike when it was first designed, web apps are now based on data binding rather than raw DOM manipulation. However using jsTree with a databinding framework has two main problems:
-
-
-* jsTree is designed for static data; data that never changes once it's been set.
-* You have to mangle your data into [jsTree's specific JSON format](http://www.jstree.com/docs/json/) in order for it to be displayed
-
-My solution to these problems is to use the native capability of every framework; to bind data to the DOM. jsTree-bind uses the DOM as a template from which to create nodes, allowing you to have data in any structure, structure it in any way, but still present it in a tree format using jsTree
-
-##Example
-```html
 <!--Set the template element to be hidden so it doesn't show up in the DOM-->
 <div class="hidden" id="tree-template">
     <div>
@@ -49,8 +42,37 @@ My solution to these problems is to use the native capability of every framework
 
 <!--The element that will recieve the jsTree-->
 <div id="js-tree"></div>
-```
 
-![Example](http://i.imgur.com/iAgTHX9.png)
+<!--Dependencies-->
+<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jstree/3.0.9/jstree.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/vue/0.11.4/vue.min.js"></script>
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jstree/3.0.9/themes/default/style.min.css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
-##API
+<!--And the plugin itself-->
+<script src="../src/jsTreeBind.js"></script>
+
+<script>
+    //Get the JSON data
+    $.ajax({
+        dataType: "json",
+        url: "generated.json",
+        mimeType: "application/json"
+    }).then(function (data) {
+
+        //Create the Vue instance
+        var vm = new Vue({
+            el: "html",
+            data: {
+                people: data
+            }
+        });
+
+        //Set up the adaptor
+        $("#js-tree").jstreeBind("#tree-template");
+    });
+
+</script>
+</body>
+</html>

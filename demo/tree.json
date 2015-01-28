@@ -1,0 +1,267 @@
+{
+  "Earth": {
+    "France": [
+      "Mont Blanc",
+      "Piton des Neiges"
+    ],
+    "Dominican Republic": ["Pico Duarte"],
+    "Yemen": ["Jabal an Nabi Shu'ayb"],
+    "Iran": [
+      "Mount Damavand",
+      "Sabalan",
+      "Kuh-e Taftan"
+    ],
+    "Costa Rica": ["Cerro Chirripó"],
+    "Ecuador": ["Chimborazo"],
+    "Ethiopia": ["Ras Dashen"],
+    "Equatorial Guinea": ["Pico Basilé"],
+    "Russia": [
+      "Mount Elbrus",
+      "Klyuchevskaya Sopka",
+      "Shiveluch",
+      "Ichinsky",
+      "Koryaksky"
+    ],
+    "Timor-Leste": ["Pico do Ramelau or Mount Ramelau"],
+    "Canada": [
+      "Mount Logan",
+      "Mount Waddington",
+      "Mount Lucania",
+      "Monarch Mountain",
+      "Mount Robson"
+    ],
+    "Indonesia": [
+      "Puncak Jaya",
+      "Mount Kerinci",
+      "Mount Rinjani",
+      "Semeru",
+      "Mount Rantemario",
+      "Mount Slamet",
+      "Mount Lawu",
+      "Raung",
+      "Mount Agung",
+      "Mount Binaiya",
+      "Mount Leuser",
+      "Moncong Lompotabang",
+      "Arjuno-Welirang"
+    ],
+    "Tanzania": [
+      "Mount Kilimanjaro",
+      "Mount Meru"
+    ],
+    "Colombia": [
+      "Pico Cristóbal Colón",
+      "Ritacuba Blanco"
+    ],
+    "Kenya": ["Mount Kenya"],
+    "Philippines": [
+      "Mount Apo",
+      "Mount Pulag"
+    ],
+    "Cape Verde": ["Mount Fogo"],
+    "Democratic Republic of the Congo": ["Mount Stanley"],
+    "Brazil": ["Pico da Neblina"],
+    "Nepal": [
+      "Mount Everest",
+      "Kangchenjunga",
+      "Dhaulagiri",
+      "Manaslu",
+      "Annapurna"
+    ],
+    "Kyrgyzstan": ["Jengish Chokusu"],
+    "Turkey": ["Mount Ararat"],
+    "New Zealand": ["Aoraki/Mount Cook"],
+    "United Kingdom": ["Mount Paget"],
+    "United States": [
+      "Mount McKinley",
+      "Mauna Kea",
+      "Mount Rainier",
+      "Mount Fairweather",
+      "Mount Blackburn",
+      "Mount Hayes",
+      "Mount Saint Elias",
+      "Mount Marcus Baker",
+      "Mount Whitney",
+      "Haleakalā",
+      "Mount Shasta",
+      "Mount Shishaldin"
+    ],
+    "Mexico": [
+      "Pico de Orizaba",
+      "Popocatepetl"
+    ],
+    "Kazakhstan": [
+      "Belukha Mountain",
+      "Sauyr Zhotasy",
+      "Pik Talgar"
+    ],
+    "Chad": ["Emi Koussi"],
+    "Cameroon": ["Mount Cameroon"],
+    "People's Republic of China": [
+      "Jiuding Shan",
+      "Bogda Peak",
+      "Namcha Barwa",
+      "Mount Gongga",
+      "Kongur Tagh",
+      "Tomort",
+      "Jade Dragon Snow Mountain",
+      "Xuelian Feng",
+      "Gyala Peri",
+      "Chakragil",
+      "Shishapangma"
+    ],
+    "Venezuela": ["Pico Bolívar"],
+    "Greenland": ["Gunnbjørn Fjeld"],
+    "Argentina": [
+      "Aconcagua",
+      "Ojos del Salado",
+      "Mercedario",
+      "Monte San Lorenzo",
+      "Cerro del Bolsón",
+      "El Mela"
+    ],
+    "Bhutan": ["Gangkhar Puensum"],
+    "Pakistan": [
+      "Nanga Parbat",
+      "K2",
+      "Tirich Mir",
+      "Batura Sar",
+      "Buni Zom",
+      "Rakaposhi"
+    ],
+    "Tajikistan": ["Ismoil Somoni Peak"],
+    "Japan": ["Mount Fuji"],
+    "Italy": ["Mount Etna"],
+    "Rwanda": ["Mount Karisimbi"],
+    "Antarctica": [
+      "Vinson Massif",
+      "Mount Erebus",
+      "Mount Siple",
+      "Mount Stephenson"
+    ],
+    "Madagascar": ["Maromokotro"],
+    "Morocco": ["Toubkal"],
+    "India": [
+      "Nanda Devi",
+      "Saramati",
+      "Kamet"
+    ],
+    "Chile": [
+      "Monte San Valentin",
+      "Lautaro"
+    ],
+    "Malaysia": ["Mount Kinabalu"],
+    "Oman": ["Jabal Shams"],
+    "Guatemala": ["Volcán Tajumulco"],
+    "Spain": [
+      "Teide",
+      "Mulhacén",
+      "Aneto"
+    ],
+    "Papua New Guinea": [
+      "Finisterre Range HP",
+      "Mount Suckling",
+      "Mount Wilhelm"
+    ],
+    "Afghanistan": ["Kuh-e Bandaka"]
+  },
+  "The Moon": {
+    "SW": [
+      "Mons Hansteen",
+      "Mons Moro"
+    ],
+    "NE": [
+      "Mons Agnes",
+      "Mons André",
+      "Mons Ardeshir",
+      "Mons Argaeus",
+      "Mons Blanc",
+      "Mons Bradley",
+      "Mons Dieter",
+      "Mons Dilip",
+      "Mons Esam",
+      "Mons Ganau",
+      "Mons Hadley",
+      "Mons Hadley Delta",
+      "Mons Maraldi",
+      "Mons Usov",
+      "Mons Vitruvius"
+    ],
+    "SE": ["Mons Penck "],
+    "NW": [
+      "Mons Ampère",
+      "Mons Delisle",
+      "Mons Gruithuisen Delta",
+      "Mons Gruithuisen Gamma",
+      "Mons Herodotus",
+      "Mons Huygens",
+      "Mons La Hire",
+      "Mons Pico",
+      "Mons Piton",
+      "Mons Rümker",
+      "Mons Vinogradov",
+      "Mons Wolff "
+    ]
+  },
+  "Mars": {
+    "SW": [],
+    "NE": [
+      "Albor Tholus",
+      "Ascraeus Mons",
+      "Ceraunius Tholus",
+      "E. Mareotis Tholus",
+      "Echus Montes",
+      "Elysium Mons",
+      "Erebus Montes",
+      "Galaxius Mons",
+      "Gonnus Mons",
+      "Hecates Tholus",
+      "Hibes Montes",
+      "Issedon Tholus",
+      "Jovis Tholus",
+      "Labeatis Mons",
+      "Libya Montes",
+      "N. Mareotis Tholus",
+      "Olympus Mons",
+      "Pavonis Mons",
+      "Phlegra Montes",
+      "Pindus Mons",
+      "Scandia Tholi",
+      "Tanaica Montes",
+      "Tartarus Montes",
+      "Tharsis Montes",
+      "Tharsis Tholus",
+      "Uranius Tholus",
+      "W. Mareotis Tholus",
+      "Xanthe Montes "
+    ],
+    "SE": [
+      "Aeolis Mons",
+      "Anseris Mons",
+      "Apollinaris Mons",
+      "Arsia Mons",
+      "Ausonia Montes",
+      "Australe Montes",
+      "Centauri Montes",
+      "Chalce Montes",
+      "Charitum Montes",
+      "Coronae Montes",
+      "Euripus Mons",
+      "Geryon Montes",
+      "Hadriacus Mons",
+      "Hellas Montes",
+      "Hellespontus Montes",
+      "Horarum Mons",
+      "Mount Sharp",
+      "Nereidum Montes",
+      "Oceanidum Mons",
+      "Octantis Mons",
+      "Peraea Mons",
+      "Sisyphi Montes",
+      "Syria Mons",
+      "Tyrrhenus Mons",
+      "Zephyria Tholus "
+    ],
+    "NW": []
+  }
+}

@@ -4,26 +4,41 @@
 (function ($) {
     function treeNode(domNode) {
 
+        var dNode = $(domNode);
         var tNode = this;
 
         //Default values
-        tNode.children = true;
+        tNode.children = Boolean(dNode.children().length);
         tNode.state = {'opened': false, 'selected': false};
         tNode.node = domNode;
 
-        //Add all data attributes
-        $.each(domNode.attributes, function (i, attr) {
-            var key = attr.nodeName;
+        //Add JSON data if present
+        var extraJson = dNode.data("jstree");
+        if (extraJson)
+            $.extend(true, tNode, extraJson);
 
-            var sub = key.substr(0, 5);
-            if (sub === "data-")
-                tNode[key.substr(5)] = attr.value;
+        //Add all data attributes except for the jstree attribute
+        var extraAttrs = dNode.data();
+        delete  extraAttrs.jstree;
+        $.extend(true, tNode, extraAttrs);
+
+        //Put all the state variables into the state property
+        $.each(["opened", "selected", "disabled"], function (index, value) {
+            if (value in tNode) {
+                tNode.state[value] = tNode[value];
+                delete tNode[value];
+            }
         });
 
         //Make sure it has text
-        if ("text" in this === false)
-            tNode.text = domNode.textContent;
-
+        var text = "";
+        if ("text" in this === false) {
+            $.each(domNode.childNodes, function (index, node) {
+                if (node.nodeType === 3)
+                    text += node.nodeValue;
+            });
+            tNode.text = text;
+        }
     }
 
     $.fn.jstreeBind = function (target, options) {
