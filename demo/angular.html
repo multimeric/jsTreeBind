@@ -1,10 +1,78 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="jsTreeBind">
 <head lang="en">
     <meta charset="UTF-8">
-    <title>Angular </title>
+    <title>Angular Tree Example</title>
 </head>
 <body>
 
+<!--Set the template element to be hidden so it doesn't show up in the DOM-->
+<div class="hidden" id="tree-template" ng-controller="exampleTree">
+    <div>
+        People
+        <div ng-repeat="person in people">
+
+            <!--Using a text node to set the text property-->
+            {{ person.name }}
+
+            <!--Using a data-attribute to set the text property-->
+            <div data-text="Tags">
+                <!--Using a data-attribute to set the icon property-->
+                <div data-icon="glyphicon glyphicon-leaf" ng-repeat="tag in person.tags">{{tag}}</div>
+            </div>
+
+            <div data-text="Friends">
+
+                <!--Using data-jstree to disable the node (the only way to set boolean properties afaik-->
+                <div data-jstree='{"disabled": true}' data-icon="glyphicon glyphicon-leaf"
+                     ng-repeat="friend in person.friends">{{friend.name}}
+                </div>
+            </div>
+
+            <div data-text="Age">
+                <!--Using a data-jstree attribute to set the icon-->
+                <div data-jstree='{"icon": "glyphicon glyphicon-leaf"}'>{{person.age}}</div>
+            </div>
+
+            <div data-text="Gender">
+                <div data-icon="glyphicon glyphicon-leaf">{{person.gender}}</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--The element that will recieve the jsTree-->
+<div id="js-tree"></div>
+
+<!--Dependencies-->
+<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jstree/3.0.9/jstree.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.min.js"></script>
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jstree/3.0.9/themes/default/style.min.css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+<!--And the plugin itself-->
+<script src="../src/jsTreeBind.js"></script>
+
+<script>
+    //Get the JSON data
+    $.ajax({
+        dataType: "json",
+        url: "generated.json",
+        mimeType: "application/json"
+    }).then(function (data) {
+
+        //Create the Angular module and controller
+        var app = angular.module('jsTreeBind', []);
+
+        app.controller('exampleTree', function ($scope) {
+            $scope.people = data;
+        });
+
+        //Set up the adaptor
+        $("#js-tree").jstreeBind("#tree-template");
+    });
+
+</script>
 </body>
 </html>

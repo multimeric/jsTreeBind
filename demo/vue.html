@@ -9,9 +9,10 @@
 <!--Set the template element to be hidden so it doesn't show up in the DOM-->
 <div class="hidden" id="tree-template">
     <div>
-        <!--Using a text node to set the text property-->
         People
         <div v-repeat="person: people">
+
+            <!--Using a text node to set the text property-->
             {{person.name}}
 
             <!--Using a data-attribute to set the text property-->
@@ -22,7 +23,7 @@
 
             <div data-text="Friends">
 
-                <!--Using data-jstree to disable the node (the only way to set boolean properties afaik-->
+                <!--Using data-jstree to disable the node-->
                 <div data-jstree='{"disabled": true}' data-icon="glyphicon glyphicon-leaf"
                      v-repeat="friend: person.friends">{{friend.name}}
                 </div>
@@ -34,7 +35,7 @@
             </div>
 
             <div data-text="Gender">
-                <div data-icon="glyphicon glyphicon-leaf">{{person.gender}}</div>
+                <div data-disabled="true" data-icon="glyphicon glyphicon-leaf">{{person.gender}}</div>
             </div>
         </div>
     </div>
