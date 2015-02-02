@@ -6,6 +6,8 @@
 </head>
 <body>
 
+<button v-on="click: change"> Change Data</button>
+
 <!--Set the template element to be hidden so it doesn't show up in the DOM-->
 <div class="hidden" id="tree-template">
     <div>
@@ -46,7 +48,8 @@
 
 <!--Dependencies-->
 <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/jstree/3.0.9/jstree.min.js"></script>
+<!--<script src="http://cdnjs.cloudflare.com/ajax/libs/jstree/3.0.9/jstree.min.js"></script>-->
+<script src="jstree.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/0.11.4/vue.min.js"></script>
 <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jstree/3.0.9/themes/default/style.min.css">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
@@ -55,23 +58,49 @@
 <script src="../src/jsTreeBind.js"></script>
 
 <script>
-    //Get the JSON data
-    $.ajax({
-        dataType: "json",
-        url: "generated.json",
-        mimeType: "application/json"
-    }).then(function (data) {
+    $(function () {
+        var temp = [];
 
-        //Create the Vue instance
-        var vm = new Vue({
-            el: "html",
-            data: {
-                people: data
-            }
+        //Get the JSON data
+        $.ajax({
+            dataType: "json",
+            url: "sample.json",
+            mimeType: "application/json"
+        }).then(function (data) {
+
+            //Add the first sample and request the second
+            temp.push(data);
+            return $.ajax({
+                dataType: "json",
+                url: "sample2.json",
+                mimeType: "application/json"
+            });
+        }).then(function (data) {
+
+            //Add the second sample
+            temp.push(data);
+
+            //Create the Vue instance
+            window.vm = new Vue({
+                el: "html",
+                data: {
+                    samples: temp
+                },
+                computed: {
+                    people: function () {
+                        return this.samples[0];
+                    }
+                },
+                methods: {
+                    change: function (e) {
+                        this.samples.reverse();
+                    }
+                }
+            });
+
+            //Set up the adaptor
+            $("#js-tree").jstreeBind("#tree-template");
         });
-
-        //Set up the adaptor
-        $("#js-tree").jstreeBind("#tree-template");
     });
 
 </script>
