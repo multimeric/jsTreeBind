@@ -22,10 +22,11 @@ To use jsTree Bind, all you need to do is call `$("#js-tree").jsTreeBind("#tree-
 The first element (`#js-tree` in this case) is the element that will *receive* the new tree.
 It's the element that will actually be shown.
 
-The second element, `#tree-template`, is the DOM element to be used as the template for the tree. Directly inside
-the `#tree-template` element should be one or more HTML elements, which will serve as the root nodes for the tree.
-These elements, and any child nodes nested further in the tree are used to generate jsTree nodes using the following
-rules:
+The second element, `#tree-template`, is the DOM element to be used as the template for the tree.
+
+Directly inside the `#tree-template` element should be one or more HTML elements, which will serve as the root nodes for
+the tree. These elements, and any child nodes nested further in the tree are used to generate jsTree nodes using the
+following rules:
 
 * Text directly inside a node will be merged into that the jsTree node's text
 
@@ -36,6 +37,8 @@ to provide a json object to use as the node's data
 
 * Any other `data-*` attributes can be used on the HTML elements, which work as you'd expect (e.g. `data-icon` sets the
 node's icon class or image URL, `data-disabled` disables the node etc.)
+
+Read on for an example!
 
 ## Example
 
@@ -83,3 +86,6 @@ node's icon class or image URL, `data-disabled` disables the node etc.)
 ```
 
 ![Example](http://i.imgur.com/iAgTHX9.png)
+
+For more detail on this example, including the Angular $scope data, and sample usage for another framework (VueJS),
+have a look in the /demo directory of the repository.
