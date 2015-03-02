@@ -1,4 +1,4 @@
-# jsTree-bind
+# jsTree Bind
 A jQuery plugin that allows the use of data binding frameworks (Angular, Ember, Knockout etc.) with the jsTree UI component.
 
 ## Rationale
@@ -8,16 +8,16 @@ jsTree is a fantastic plugin, but it's a bit behind the times. Unlike when it wa
 * jsTree is designed for static data; data that never changes once it's been set.
 * You have to mangle your data into [jsTree's specific JSON format](http://www.jstree.com/docs/json/) in order for it to be displayed
 
-My solution to these problems is to use the native capability of every framework; to bind data to the DOM. jsTree-bind uses the DOM as a template from which to create nodes, allowing you to have data in any structure, structure it in any way, but still present it in a tree format using jsTree
+My solution to these problems is to use the native capability of every framework; to bind data to the DOM. jsTree Bind uses the DOM as a template from which to create nodes, allowing you to have data in any structure, structure it in any way, but still present it in a tree format using jsTree
 
 ## Installation
 
-Just run `npm install js-tree-bind` or `git clone https://github.com/TMiguelT/jsTree-bind` to get a copy of the
-repository, then copy either `jsTree-bind.js` or `jsTree-bind.min.js` somewhere into your project.
+Just run `npm install js-tree-bind` or `git clone https://github.com/TMiguelT/jsTreeBind` to get a copy of the
+repository, then copy either `jsTreeBind.js` or `jsTreeBind.min.js` somewhere into your project.
 
 ## Usage
 
-To use jsTree-bind, all you need to do is call `$("#js-tree").jstreeBind("#tree-template");`
+To use jsTree Bind, all you need to do is call `$("#js-tree").jsTreeBind("#tree-template");`
 
 The first element (`#js-tree` in this case) is the element that will *receive* the new tree.
 It's the element that will actually be shown.

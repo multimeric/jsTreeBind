@@ -6,7 +6,7 @@
     var getDefaults = require("./options");
     var observe = require("./observe");
 
-    $.fn.jstreeBind = function (target, options) {
+    $.fn.jsTreeBind = function (target, options) {
 
         //Main variables
         options = options || {};
@@ -19,7 +19,7 @@
         if (typeof $.fn.jstree != "function")
             throw new Error("jsTree must be installed for jsTree-bind to work!");
         if (template[0] instanceof Element === false)
-            throw new Error("You need to pass in a valid jQuery selector or DOM element as the first element of jstreeBind()");
+            throw new Error("You need to pass in a valid jQuery selector or DOM element as the first element of jsTreeBind()");
         if (template.length > 1)
             warn("You can only define one root element to bind to the jsTree. Additional elements ignored.");
 

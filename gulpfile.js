@@ -1,17 +1,16 @@
 var browserify = require('browserify');
 var gulp = require('gulp');
 var source = require('vinyl-source-stream');
-var buffer = require('vinyl-buffer');
 var uglify = require('gulp-uglify');
 var fileinclude = require('gulp-file-include');
-
-var getBundleName = function (min) {
-    var name = require('./package.json').name;
-    return name + ( min ? '.' + 'min' : "") + ".js";
-};
+var del = require("del");
+var buffer = require('vinyl-buffer')
 
 gulp.task('build', ['plugin', 'demo']);
 
+gulp.task('clean', function () {
+    del(["demo/*", "dist/*"]);
+});
 
 //Builds the plugin, i.e. the actual library using browserify
 gulp.task('plugin', function () {
@@ -22,22 +21,22 @@ gulp.task('plugin', function () {
     browserify({
         entries: entries,
         debug: true
-    }).bundle()
-        .pipe(source(getBundleName(false)))
-        .pipe(buffer())
+    })
+        .bundle()
+        .pipe(source('jsTreeBind.js'))
         .pipe(gulp.dest('./dist'));
 
     //Minified pipeline
     browserify({
         entries: entries,
         debug: false
-    }).bundle()
-        .pipe(source(getBundleName(true)))
+    })
+        .bundle()
+        .pipe(source('jsTreeBind.min.js'))
         .pipe(buffer())
         .pipe(uglify())
         .pipe(gulp.dest('./dist'));
 });
-
 
 //Builds the demo files
 gulp.task('demo', function () {
@@ -51,7 +50,6 @@ gulp.task('demo', function () {
         .require('./demo_src/common.js', {expose: 'common'})
         .bundle()
         .pipe(source('common.js'))
-        .pipe(buffer())
         .pipe(gulp.dest('./demo'));
 
 });

@@ -12,13 +12,6 @@
 <!--The element that will recieve the jsTree-->
 <div id="js-tree"></div>
 
-<!--Context menu-->
-<div id="context-menu">
-    <ul class="dropdown-menu" role="menu">
-        <li><a tabindex="-1">Change</a></li>
-    </ul>
-</div>
-
 <!--Set the template element to be hidden so it doesn't show up in the DOM-->
 <div class="hidden" id="tree-template">
 
@@ -71,7 +64,7 @@
 <script src="common.js"></script>
 
 <!--And the plugin itself-->
-<script src="../dist/jsTree-bind.js"></script>
+<script src="../dist/jsTreeBind.js"></script>
 
 <script>
     //Create the Angular module and controller
@@ -88,7 +81,7 @@
     });
 
     //Set up the adaptor
-    $("#js-tree").jstreeBind("#tree-template");
+    $("#js-tree").jsTreeBind("#tree-template");
 </script>
 </body>
 </html>

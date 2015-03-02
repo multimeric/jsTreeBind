@@ -9,7 +9,8 @@
 <!--On button click the entire person array is changed-->
 <button v-on="click: change">Change Data</button>
 
-@@include('./common_elements.html')
+<!--The element that will recieve the jsTree-->
+<div id="js-tree"></div>
 
 <!--Set the template element to be hidden so it doesn't show up in the DOM-->
 <div class="hidden" id="tree-template">
@@ -76,7 +77,7 @@
         });
 
         //Set up the adaptor
-        $("#js-tree").jstreeBind("#tree-template");
+        $("#js-tree").jsTreeBind("#tree-template");
     });
 </script>
 </body>
