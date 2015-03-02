@@ -1,0 +1,3 @@
+Convert build to gulp
+Use https://github.com/jonkemp/gulp-useref to concatinate the shared HTML
+Add context menu to each element so when you click it it changes the data to a random string in the original data

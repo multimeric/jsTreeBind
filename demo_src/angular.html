@@ -9,15 +9,7 @@
 <!--On button click the entire person array is changed-->
 <button ng-click="change()">Change Data</button>
 
-<!--The element that will recieve the jsTree-->
-<div id="js-tree"></div>
-
-<!--Context menu-->
-<div id="context-menu">
-    <ul class="dropdown-menu" role="menu">
-        <li><a tabindex="-1">Change</a></li>
-    </ul>
-</div>
+@@include('./common_elements.html')
 
 <!--Set the template element to be hidden so it doesn't show up in the DOM-->
 <div class="hidden" id="tree-template">
@@ -60,18 +52,7 @@
 <!--Include Angular-->
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.js"></script>
 
-<!--Dependencies-->
-<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/jstree/3.0.9/jstree.min.js"></script>
-
-<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jstree/3.0.9/themes/default/style.min.css">
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-
-<!--Additional JS to setup the context menu and load JSON-->
-<script src="common.js"></script>
-
-<!--And the plugin itself-->
-<script src="../dist/jsTree-bind.js"></script>
+@@include('./common_deps.html')
 
 <script>
     //Create the Angular module and controller
