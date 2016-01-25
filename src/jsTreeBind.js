@@ -24,7 +24,7 @@
             warn("You can only define one root element to bind to the jsTree. Additional elements ignored.");
 
         //Merge this configuration object with whatever the user has passed in
-        var merged = $.extend(getDefaults(template), options);
+        var merged = $.extend(true, getDefaults(template), options);
 
         //Actually call jstree()
         tree.jstree(merged);
